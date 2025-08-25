@@ -36,7 +36,7 @@ class Agent:
         self.learn_step_cntr = 0
         self.time_step = 0
         self.n_actions = n_actions
-        self.updtae_actor_interval = update_actor_interval
+        self.update_actor_interval = update_actor_interval
         self.warmup = warmup
 
         # Convert input_dims tuple to integer for neural networks
@@ -156,7 +156,7 @@ class Agent:
 
         self.learn_step_cntr += 1
 
-        if self.learn_step_cntr % self.updtae_actor_interval != 0:
+        if self.learn_step_cntr % self.update_actor_interval != 0:
             return
 
         self.actor.optimizer.zero_grad()
